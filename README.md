@@ -4,9 +4,9 @@ App web estática (HTML + CSS + JS) lista para desplegar en Netlify.
 
 ## Archivos
 - `index.html` — estructura
-- `styles.css` — estilos (tema oscuro, responsive)
+- `styles.css` — estilos (tema claro corporativo, responsive)
 - `app.js` — lógica (login, trabajadores, registros, PDF, correo)
-- `animations.js` — fondo 3D (Three.js) y animaciones (GSAP)
+- `animations.js` — animaciones sutiles (GSAP)
 
 ## Despliegue en Netlify
 1. Entra a https://app.netlify.com y crea cuenta (gratis).

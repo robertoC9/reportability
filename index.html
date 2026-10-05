@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-bs-theme="dark">
+<html lang="es" data-bs-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<canvas id="fondo3d"></canvas>
 <div id="login" class="login-overlay">
   <div class="login-card">
     <h2>🔒 Acceso restringido</h2>
@@ -48,7 +47,7 @@
     <h2>2️⃣ Ingreso diario de actividad</h2>
     <p class="ayuda">Ingresa la fecha y la actividad de cada trabajador y presiona <b>Guardar registro</b>. Se agrega al historial sin borrar los días anteriores.</p>
     <div class="table-wrapper">
-      <table class="table table-dark table-striped table-hover align-middle" id="tablaTrabajadores">
+      <table class="table table-striped table-hover align-middle" id="tablaTrabajadores">
         <thead>
           <tr>
             <th>RUT</th>
@@ -80,7 +79,7 @@
       <button id="btnClave" class="btn btn-secondary">🔑 Cambiar clave</button>
     </div>
     <div class="table-wrapper">
-      <table class="table table-dark table-striped table-hover align-middle" id="tabla">
+      <table class="table table-striped table-hover align-middle" id="tabla">
         <thead>
           <tr>
             <th><input type="checkbox" id="checkAll"></th>
@@ -106,7 +105,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="app.js"></script>
 <script src="animations.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
