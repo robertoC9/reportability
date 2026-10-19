@@ -16,22 +16,9 @@
     <button id="btnEntrar" class="btn btn-primary">Entrar</button>
     <p id="errorClave" class="error"></p>
     <p id="detalleClave" class="ayuda"></p>
-    <details class="config-panel" id="panelConfig">
-      <summary>⚙️ Configuración de conexión (Supabase)</summary>
-      <label>URL del proyecto
-        <input class="form-control" id="cfgUrl" type="text" placeholder="https://xxxxxxx.supabase.co" autocomplete="off">
-      </label>
-      <label>Clave de API (publishable / anon)
-        <input class="form-control" id="cfgKey" type="password" placeholder="sb_publishable_..." autocomplete="off">
-      </label>
-      <div class="cfg-botones">
-        <button id="btnGuardarConfig" class="btn btn-secondary btn-sm" type="button">Guardar</button>
-        <button id="btnProbarConfig" class="btn btn-outline-secondary btn-sm" type="button">Probar conexión</button>
-        <button id="btnRestablecerConfig" class="btn btn-outline-secondary btn-sm" type="button">Restablecer</button>
-      </div>
-      <p id="estadoConfig" class="ayuda"></p>
-    </details>
-    <p class="aviso-datos">🔒 Tus datos se almacenan de forma segura en Supabase y solo el personal autorizado puede acceder mediante clave.</p>
+    <p id="avisoClaveInicial" class="aviso-inicial">Clave inicial: <b>1234</b> — cámbiala con el botón 🔑 Cambiar clave.</p>
+    <p class="link-reset"><a href="#" id="btnRestablecerClave">🔑 ¿Olvidaste la clave? Restablecer a 1234</a></p>
+    <p class="aviso-datos">🔒 Los datos se guardan en este navegador. Solo el personal autorizado puede acceder mediante clave.</p>
   </div>
 </div>
 <div class="container py-3" id="app" style="display:none;">
@@ -93,6 +80,9 @@
       <button id="btnLimpiarFiltro" class="btn btn-secondary">Ver todo</button>
       <button id="btnPDF" class="btn btn-danger">📄 Descargar PDF</button>
       <button id="btnCorreo" class="btn btn-success">✉️ Enviar seleccionados por correo</button>
+      <button id="btnExportar" class="btn btn-outline-primary">💾 Exportar datos</button>
+      <button id="btnImportar" class="btn btn-outline-primary">📂 Importar datos</button>
+      <input type="file" id="inputImportar" accept="application/json,.json" hidden>
       <button id="btnClave" class="btn btn-secondary">🔑 Cambiar clave</button>
     </div>
     <div class="table-wrapper">
@@ -115,14 +105,12 @@
     </div>
     <p id="mensajeVacio" class="vacio">No hay registros todavía.</p>
   </section>
-  <footer>🔒 Protección de datos: la información se almacena cifrada en tránsito (HTTPS) en Supabase. El acceso está restringido por clave. No compartir la clave con terceros.</footer>
+  <footer>🔒 Protección de datos: la información se guarda en este navegador y el acceso está restringido por clave. Haz copias de seguridad con 💾 Exportar datos y no compartas la clave con terceros.</footer>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="config.js"></script>
 <script src="sha256.js"></script>
 <script src="app.js"></script>
 <script src="animations.js"></script>
