@@ -12,13 +12,30 @@
 <div id="login" class="login-overlay">
   <div class="login-card">
     <h2>🔒 Acceso restringido</h2>
-    <input class="form-control" type="password" id="inputClave" placeholder="Ingresa la clave">
+    <input class="form-control" type="password" id="inputClave" placeholder="Ingresa la clave" autocomplete="current-password">
     <button id="btnEntrar" class="btn btn-primary">Entrar</button>
     <p id="errorClave" class="error"></p>
+    <p id="detalleClave" class="ayuda"></p>
+    <details class="config-panel" id="panelConfig">
+      <summary>⚙️ Configuración de conexión (Supabase)</summary>
+      <label>URL del proyecto
+        <input class="form-control" id="cfgUrl" type="text" placeholder="https://xxxxxxx.supabase.co" autocomplete="off">
+      </label>
+      <label>Clave de API (publishable / anon)
+        <input class="form-control" id="cfgKey" type="password" placeholder="sb_publishable_..." autocomplete="off">
+      </label>
+      <div class="cfg-botones">
+        <button id="btnGuardarConfig" class="btn btn-secondary btn-sm" type="button">Guardar</button>
+        <button id="btnProbarConfig" class="btn btn-outline-secondary btn-sm" type="button">Probar conexión</button>
+        <button id="btnRestablecerConfig" class="btn btn-outline-secondary btn-sm" type="button">Restablecer</button>
+      </div>
+      <p id="estadoConfig" class="ayuda"></p>
+    </details>
     <p class="aviso-datos">🔒 Tus datos se almacenan de forma segura en Supabase y solo el personal autorizado puede acceder mediante clave.</p>
   </div>
 </div>
 <div class="container py-3" id="app" style="display:none;">
+  <div id="avisoApp" class="alerta-app" style="display:none;"></div>
   <h1>📋 Reportabilidad Diaria de Trabajadores</h1>
   <div style="text-align:center"><span id="reloj" class="reloj"></span></div>
 
@@ -105,6 +122,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="config.js"></script>
+<script src="sha256.js"></script>
 <script src="app.js"></script>
 <script src="animations.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
